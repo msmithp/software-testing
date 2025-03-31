@@ -66,4 +66,7 @@ class Rational():
             self.denominator = -self.denominator
 
     def reciprocal(self):
-        return Rational(self.denominator, self.numerator)
+        if self.numerator == 0:
+            raise ZeroDivisionError
+        else:
+            return Rational(self.denominator, self.numerator)
