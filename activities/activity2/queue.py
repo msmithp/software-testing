@@ -7,6 +7,8 @@ class Queue():
         self.items.append(item)
 
     def dequeue(self):
+        if self.is_empty():
+            raise Exception("Cannot dequeue from empty queue")
         return self.items.pop(0)
     
     def is_empty(self):
