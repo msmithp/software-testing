@@ -1,4 +1,10 @@
-from triangle import Triangle
+from triangle import RightTriangle
 import pytest
+import math
 
-#Write your test here
+def equals_float(a, b, epsilon=0.05):
+    """ Determine if two floating-point values are 
+        equal to two decimal places """
+    return abs(a - b) <= epsilon 
+
+# Write your tests here
