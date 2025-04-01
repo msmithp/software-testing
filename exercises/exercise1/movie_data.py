@@ -1,9 +1,10 @@
-def get_movie_data(movies):
+def get_movie_info(movies):
     avg = get_avg(movies)
     biggest = get_max(movies)
     smallest = get_min(movies)
-    print('The movie with the highest revenue is', biggest, ", the movie with the lowest revenue is", smallest,
-          ", and the average revenue is", get_avg(movies))
+    print('Highest Revenue:', biggest)
+    print('Lowest Revenue:', smallest)
+    print('Average Revenue:', avg)
 
 def get_max(movies): # Return the highest revenue
     movie_revenues = []

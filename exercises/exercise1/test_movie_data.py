@@ -1,10 +1,10 @@
-from movie_data import get_movie_data
+from movie_data import get_movie_info
 
 movies = [
     {
         'title': 'Sunset',
         'release date': 1997,
-        'revenue': 280000000,
+        'revenue': 80000000,
     },
     {
         'title': 'Lifelock',
@@ -27,18 +27,18 @@ movies = [
         'revenue': 98840000
     },
     {
-        'title': 'Battlefield Earth',
+        'title': 'Battlefield Mars',
         'release date': 2000,
         'revenue': 29700000
     }
 ]
 
 # Write your tests here.
-"""def test_movies():
-    assert get_movie_info(movies)"""
+def test_movies():
+    assert get_movie_info(movies)
 
 def movie_test(movies):
-    print(get_movie_data(movies))
+    print(get_movie_info(movies))
 
 #movie_test(movies)
 movie_test(movies)
