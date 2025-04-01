@@ -1,4 +1,5 @@
 from movie_data import get_max, get_min, get_avg, rounding, format_revenue, format_movie
+import pytest
 
 movies = [
     {
