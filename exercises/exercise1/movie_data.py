@@ -1,36 +1,45 @@
-movies = [
-    {
-        'name': 'Sunset',
-        'release date': 1997,
-        'revenue': 200000000,
-    },
-    {
-        'name': 'Lifelock',
-        'release date': 2024,
-        'revenue': 600000000
-    },
-    {
-        'name': 'Terror',
-        'release date': 2013,
-        'revenue': 150000000
-    },
-    {
-        'name': 'Meningitis: A Documentary',
-        'release date': 2003,
-        'revenue': 73057920
-    },
-    {
-        'name': 'The Best Movie Ever Made',
-        'release date': 2025,
-        'revenue': 7000000000
-    },
-    {
-        'name': 'Battlefield Earth',
-        'release date': 2000,
-        'revenue': 29700000
-    }
-]
+def get_movie_data(movies):
+    avg = get_avg(movies)
+    biggest = get_max(movies)
+    smallest = get_min(movies)
+    print('The movie with the highest revenue is', biggest, ", the movie with the lowest revenue is", smallest,
+          ", and the average revenue is", get_avg(movies))
 
+def get_max(movies): # Return the highest revenue
+    movie_revenues = []
+    for movie in movies:
+        movie_revenues.append(movie['revenue'])
+    
+    for movie in movies: 
+        if movie['revenue'] == max(movie_revenues):
+            biggest = movie
+    
+    return biggest['title']
 
+def get_min(movies): # Return the lowest revenue
+    movie_revenues = []
+    for movie in movies:
+        movie_revenues.append(movie['revenue'])
 
-# Write your tests here.
+    for movie in movies:
+        if movie['revenue'] == min(movie_revenues):
+            smallest = movie
+
+    return smallest['title']
+
+def get_avg(movies): # Get the average of all movie revenues
+    total = 0
+    for movie in movies:
+        total += movie['revenue']
+    avg = total/len(movies)
+    new_avg = rounding(avg)
+    return int(new_avg)
+
+def rounding(num): # Round a number to the nearest million
+    if num%1000000 != 0:
+        if num%1000000 >= 500000:
+            new_num = num - (num%1000000) + 1000000
+        elif num%1000000 < 500000:
+            new_num = num - (num%1000000)
+
+    return new_num

@@ -1,30 +1,44 @@
-def get_movie_info(movies):
-    clean_movies = clean_data(movies)
-    avg = get_avg(clean_movies)
-    return
+from movie_data import get_movie_data
 
-def clean_data(movies):
-    movie_revenues = []
-    for movie in movies:
-        movie_revenues.append(movie['revenue'])
-    
-    new_movies = movies
-    
-    return new_movies
+movies = [
+    {
+        'title': 'Sunset',
+        'release date': 1997,
+        'revenue': 280000000,
+    },
+    {
+        'title': 'Lifelock',
+        'release date': 2024,
+        'revenue': 620000000
+    },
+    {
+        'title': 'Terror',
+        'release date': 2013,
+        'revenue': 150000000
+    },
+    {
+        'title': 'Meningitis: A Documentary',
+        'release date': 2003,
+        'revenue': 73057920
+    },
+    {
+        'title': 'The Best Movie Ever Made',
+        'release date': 2025,
+        'revenue': 98840000
+    },
+    {
+        'title': 'Battlefield Earth',
+        'release date': 2000,
+        'revenue': 29700000
+    }
+]
 
-def get_avg(movies):
-    total = 0
-    for movie in movies:
-        total += movie['revenue']
-    avg = total/len(movies)
-    new_avg = rounding(avg)
-    return new_avg
+# Write your tests here.
+"""def test_movies():
+    assert get_movie_info(movies)"""
 
-def rounding(num):
-    if num%1000000 != 0:
-        if num%1000000 >= 500000:
-            new_num = num - (num%1000000) + 1000000
-        elif num%1000000 <= 500000:
-            new_num = num - (num%1000000)
+def movie_test(movies):
+    print(get_movie_data(movies))
 
-    return new_num
+#movie_test(movies)
+movie_test(movies)
