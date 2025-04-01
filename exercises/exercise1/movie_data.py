@@ -1,8 +1,7 @@
-def format_revenue(num):
-    # Output should be something like $100.00
+def format_revenue(num): # Format an integer in dollars.
     return "$" + str(num) + ".00"
 
-def format_movie(title, revenue):
+def format_movie(title, revenue): # Format movie title and its revenue into a string
     return "Title: " + title + ", Revenue: " + format_revenue(revenue)
 
 def get_max(movies): # Return the movie title that has the highest revenue
