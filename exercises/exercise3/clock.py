@@ -1,4 +1,5 @@
 class Clock():
+    """ 24-hour clock, with times from 0:00 to 23:59"""
     def __init__(self, hrs, mins):
         self.hrs = hrs
         self.mins = mins
@@ -17,3 +18,6 @@ class Clock():
 
     def __str__(self):
         return f"{self.hrs:02d}:{self.mins:02d}"
+
+    def __eq__(self, other):
+        return self.hrs == other.hrs and self.mins == other.mins
