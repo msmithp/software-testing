@@ -42,7 +42,7 @@ def get_avg(movies): # Return the average of all movie revenues
     return avg_cash
 
 def rounding(num): # Round a number to the nearest million
-    if num%1000000 != 0:
+    if num%1000000 == 0:
         if num%1000000 >= 500000:
             new_num = num - (num%1000000) + 1000000
         elif num%1000000 < 500000:
