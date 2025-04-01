@@ -1,12 +1,4 @@
-def get_movie_info(movies):
-    avg = get_avg(movies)
-    biggest = get_max(movies)
-    smallest = get_min(movies)
-    print('Highest Revenue:', biggest)
-    print('Lowest Revenue:', smallest)
-    print('Average Revenue:', avg)
-
-def get_max(movies): # Return the highest revenue
+def get_max(movies): # Return the movie title that has the highest revenue
     movie_revenues = []
     for movie in movies:
         movie_revenues.append(movie['revenue'])
@@ -17,7 +9,7 @@ def get_max(movies): # Return the highest revenue
     
     return biggest['title']
 
-def get_min(movies): # Return the lowest revenue
+def get_min(movies): # Return the movie title that has the lowest revenue
     movie_revenues = []
     for movie in movies:
         movie_revenues.append(movie['revenue'])
@@ -28,7 +20,7 @@ def get_min(movies): # Return the lowest revenue
 
     return smallest['title']
 
-def get_avg(movies): # Get the average of all movie revenues
+def get_avg(movies): # Return the average of all movie revenues
     total = 0
     for movie in movies:
         total += movie['revenue']
@@ -37,7 +29,7 @@ def get_avg(movies): # Get the average of all movie revenues
     return int(new_avg)
 
 def rounding(num): # Round a number to the nearest million
-    if num%1000000 != 0:
+    if num%1000000 == 0:
         if num%1000000 >= 500000:
             new_num = num - (num%1000000) + 1000000
         elif num%1000000 < 500000:

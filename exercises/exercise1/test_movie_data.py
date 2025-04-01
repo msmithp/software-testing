@@ -1,4 +1,4 @@
-from movie_data import get_movie_info
+from movie_data import get_max, get_min, get_avg, rounding
 
 movies = [
     {
@@ -34,11 +34,3 @@ movies = [
 ]
 
 # Write your tests here.
-def test_movies():
-    assert get_movie_info(movies)
-
-def movie_test(movies):
-    print(get_movie_info(movies))
-
-#movie_test(movies)
-movie_test(movies)
